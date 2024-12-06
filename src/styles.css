@@ -1,197 +1,265 @@
+/* Сброс стандартных стилей браузера */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color:color-mix(in hsl shorter hue, color percentage, color percentage);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-  }
-  
-  .quiz-container {
-    background-image: url('https://img.freepik.com/free-vector/question-marks-background_78370-2896.jpg?semt=ais_hybrid');
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .quiz-container:hover {
-    transform: scale(1.05);
-  }
-  
-  .quiz-title {
-    font-size: 2.5em;
-    color: #444;
-    margin-bottom: 30px;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  
- 
-  .home-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  .home-page h2 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .home-page p {
-    font-size: 22px;
-    color: black;
-    margin-bottom: 40px;
-  }
-  
-  .start-button {
-    background-color: yellowgreen;
-    color: white;
-    padding: 15px 35px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.4em;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  }
-  
-  .start-button:hover {
-    background-color: yellowgreen;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .start-button:active {
-    transform: translateY(0);
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .question-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  h2 {
-    font-size: 2em;
-    color: black;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
-  }
-  
-  .options {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .option-button {
-    background-color:burlywood;
-    color: white;
-    padding: 15px 40px;
-    margin: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.3em;
-    cursor: pointer;
-    width: 80%;
-    transition: background-color 0.3s, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .option-button:hover {
-    background-color:burlywood;
-    transform: translateY(-3px);
-  }
-  
-  .option-button:active {
-    transform: translateY(0);
-  }
-  
-  .option-button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-  }
-  
+/* Основные стили для body */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
 
-  .result-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .result-container h2 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .result-container p {
-    font-size: 1.6em;
-    color: #444;
-    margin: 20px 0;
-    font-weight: 500;
-  }
-  
-  .restart-button {
-    background-color: #f44336;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.3em;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .restart-button:hover {
-    background-color: #d32f2f;
-    transform: translateY(-3px);
-  }
-  
-  .restart-button:active {
-    transform: translateY(0);
-  }
-  
- 
-  .timer {
-    font-size: 1.5em;
-    color: #ff5722;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
+/* Контейнер викторины */
+.quiz-container {
+  background-image: url('https://img.freepik.com/free-vector/question-marks-background_78370-2896.jpg?semt=ais_hybrid');
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90vw; /* Сделано адаптивным */
+  max-width: 800px;
+  min-height: 80vh; /* Почти весь экран */
+  padding: 50px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease-out;
+}
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+.quiz-container:hover {
+  transform: scale(1.05);
+}
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .quiz-container {
-    animation: fadeIn 1s ease-out;
+  to {
+    opacity: 1;
   }
-  
-  
-  
+}
+
+/* Заголовок викторины */
+.quiz-title {
+  font-size: 2.5em;
+  color: #444;
+  margin-bottom: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Контейнер главной страницы */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.home-page h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.home-page p {
+  font-size: 22px;
+  color: black;
+  margin-bottom: 40px;
+}
+
+/* Контейнер с вопросами */
+.question-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-size: 2em;
+  color: black;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Опции для ответов */
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option-button {
+  background-color: burlywood;
+  color: white;
+  padding: 15px 40px;
+  margin: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.3em;
+  cursor: pointer;
+  width: 80%;
+  transition: background-color 0.3s, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option-button:hover {
+  background-color: #f4a261;
+  transform: translateY(-3px);
+}
+
+.option-button:active {
+  transform: translateY(0);
+}
+
+.option-button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Контейнер для результатов */
+.result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-container h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.result-container p {
+  font-size: 1.6em;
+  color: #444;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+/* Кнопка перезапуска */
+.restart-button {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.3em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.restart-button:hover {
+  background-color: #d32f2f;
+  transform: translateY(-3px);
+}
+
+.restart-button:active {
+  transform: translateY(0);
+}
+
+/* Таймер */
+.timer {
+  font-size: 1.5em;
+  color: #ff5722;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Контейнер для выбора сложности */
+.difficulty-buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn.easy {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn.medium {
+  background-color: #ffc107;
+  color: white;
+}
+
+.btn.hard {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Убираем прокрутку */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.result-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.restart-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.restart-button:hover {
+  background-color: red;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.footer-email {
+  font-size: 18px;
+  color: #555;
+}
+
+.footer-email a {
+  color:brown;
+  text-decoration: none;
+}
+
+.footer-email a:hover {
+  text-decoration: underline;
+}

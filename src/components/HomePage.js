@@ -1,14 +1,24 @@
-import React from 'react';
+import React from "react";
 
-function HomePage({ startQuiz }) {  
+function HomePage({ startQuiz }) {
   return (
     <div className="home-page">
       <h2>Добро пожаловать в BrainStorm!</h2>
-      <p>Нажмите "Начать", чтобы начать викторину.</p>
-      <button className="start-button" onClick={startQuiz}>
-        Начать викторину
-      </button>
+      <p>Выберите уровень сложности, чтобы начать игру:</p>
+      <div className="difficulty-buttons">
+        <button className="btn easy" onClick={() => startQuiz("easy")}>
+          Легкий
+        </button>
+        <button className="btn medium" onClick={() => startQuiz("medium")}>
+          Средний
+        </button>
+        <button className="btn hard" onClick={() => startQuiz("hard")}>
+          Сложный
+        </button>
+      </div>
+   
     </div>
+  
   );
 }
 

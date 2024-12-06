@@ -15,6 +15,12 @@ function Result({ questions, userAnswers }) {
       <button className="restart-button" onClick={() => window.location.reload()}>
         Пройти заново
       </button>
+      <footer className="footer">
+        <div className="footer-content">
+         
+          <p className="footer-email">Контакты: <a href="mailto:akmatbekovc1@gmail.com">akmatbekovc1@gmail.com</a></p>
+        </div>
+      </footer>
     </div>
   );
 }
